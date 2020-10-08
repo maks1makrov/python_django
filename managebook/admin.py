@@ -2,5 +2,15 @@ from django.contrib import admin
 
 from managebook.models import Book, Genre
 
-admin.site.register(Book)
+
+class BookAdmin(admin.ModelAdmin):
+    prepopulated_fields = {"slug": ("title",)}
+    list_display = ['title', 'publish_date']
+    search_fields = ['title']
+    list_filter = ['publish_date', 'author', "genre"]
+    readonly_fields = ["cached_rate"]
+
+
+admin.site.register(Book, BookAdmin)
 admin.site.register(Genre)
+
