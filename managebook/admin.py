@@ -6,7 +6,7 @@ from managebook.models import Book, Genre, Comment
 class CommentAdmin(admin.StackedInline):
     model = Comment
     extra = 2
-    readonly_fields = ['like']
+    readonly_fields = ['like', "cached_like"]
 
 
 class BookAdmin(admin.ModelAdmin):
@@ -15,7 +15,7 @@ class BookAdmin(admin.ModelAdmin):
     list_display = ['title', 'publish_date']
     search_fields = ['title']
     list_filter = ['publish_date', 'author', "genre"]
-    readonly_fields = ["cached_rate"]
+    readonly_fields = ["cached_rate", ]
 
 
 admin.site.register(Book, BookAdmin)
