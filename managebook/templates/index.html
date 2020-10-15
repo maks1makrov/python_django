@@ -6,24 +6,24 @@
 {% endfor %}<br>
 {% if user.is_authenticated %}
 
-<!--    <a href="{% url 'add_book' %}">Add new book</a>-->
-<div id="ex1" class="modal">
-    <div>
-    {% csrf_token %}
-    {{ bookform.title.label }}
-    {{ bookform.title }}
-    {{ bookform.text.label }}
-    {{ bookform.text }}
-    {{ bookform.genre.label }}
-    <p>{{ bookform.genre }}</p>
+    <a href="{% url 'add_book' %}">Add new book</a>
+<!--<div id="ex1" class="modal">-->
+<!--    <div>-->
+<!--    {% csrf_token %}-->
+<!--    {{ bookform.title.label }}-->
+<!--    {{ bookform.title }}-->
+<!--    {{ bookform.text.label }}-->
+<!--    {{ bookform.text }}-->
+<!--    {{ bookform.genre.label }}-->
+<!--    <p>{{ bookform.genre }}</p>-->
 
-    <a class="btn add_new_book">OK</a>
-    </div>
-  <a href="#" rel="modal:close" hidden>Close</a>
-</div>
+<!--    <a class="btn add_new_book">OK</a>-->
+<!--    </div>-->
+<!--  <a href="#" rel="modal:close" hidden>Close</a>-->
+<!--</div>-->
 
 <!-- Link to open the modal -->
-<p><a href="#ex1" rel="modal:open">Open Modal</a></p>
+<!--<p><a href="#ex1" rel="modal:open">Open Modal</a></p>-->
 {% endif %}
 
 {% for book in content %}

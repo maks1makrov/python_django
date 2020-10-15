@@ -1,0 +1,17 @@
+{% extends 'main_template.html' %}
+{% block login %}
+{% for m in messages %}
+<h3 class="text-danger">{{ m }}</h3>
+{% endfor%}
+<i>Войти с помощью:</i>
+<a href="{% url 'social:begin' 'github' %}">github</a><br><br>
+<form action="{% url 'login' %}" method="post">
+    {% csrf_token %}
+    {{ form.username.label }}<br>
+    {{ form.username }}<br>
+    {{ form.password.label }}<br>
+    {{ form.password }}<br>
+    <button type="submit"   class="btn btn-primary btn-sm">OK</button>
+</form>
+
+{% endblock %}
