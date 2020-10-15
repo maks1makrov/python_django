@@ -4,8 +4,8 @@ from django.views.decorators.cache import cache_page
 from managebook import views
 
 urlpatterns = [
-    path('hello/', cache_page(1)(views.BookView.as_view()), name='hello'),
-    path('hello/<int:num_page>', cache_page(1)(views.BookView.as_view()), name='hello_page'),
+    path('hello/', views.BookView.as_view(), name='hello'),
+    path('hello/<int:num_page>', views.BookView.as_view(), name='hello_page'),
     # path('hello/', views.BookView.as_view(), name='hello'),
     path('hello1/', views.hello1, name='hello1111'),
     path("add_rate/<int:rate>/<int:book_id>", views.AddRateBook.as_view(), name="add_rate"),
