@@ -13,6 +13,7 @@ from django.http import HttpResponse, JsonResponse
 from django.shortcuts import render, redirect
 from django.utils.decorators import method_decorator
 from django.views.decorators.cache import cache_page
+import pytils
 from pytils.translit import slugify
 
 from managebook.forms import BookForm, CommentForm, CustomUserCreationForm, CustomAuthenticationForm
